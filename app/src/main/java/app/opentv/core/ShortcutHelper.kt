@@ -14,7 +14,6 @@ import android.widget.Toast
 import androidx.core.content.pm.ShortcutInfoCompat
 import androidx.core.content.pm.ShortcutManagerCompat
 import androidx.core.graphics.drawable.IconCompat
-import app.opentv.EXTRA_PLAY_CHANNEL
 import app.opentv.MainActivity
 import app.opentv.R
 import app.opentv.data.model.Channel
@@ -40,7 +39,7 @@ object ShortcutHelper {
             
             val intent = Intent(context, MainActivity::class.java).apply {
                 action = Intent.ACTION_VIEW
-                putExtra(EXTRA_PLAY_CHANNEL, channel.id)
+                putExtra(MainActivity.EXTRA_PLAY_CHANNEL, channel.id)
                 addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TOP)
             }
 
