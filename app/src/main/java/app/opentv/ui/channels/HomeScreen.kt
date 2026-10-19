@@ -745,6 +745,10 @@ fun HomeScreen(
                             }
                         }
                     }
+                    RecordActionRow("Pin to Home Screen") {
+                        channelMenu = null
+                        app.opentv.core.ShortcutHelper.pinChannel(context, channel, recordScope)
+                    }
                     if (recordingThis != null) {
                         RecordActionRow(stringResource(R.string.rec_stop_recording), primary = true) {
                             graph.recordingEngine.stop(recordingThis.id)
